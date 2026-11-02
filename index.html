@@ -1,0 +1,1078 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071a36">
+  <meta name="description" content="GR Fit — Sua força constrói. Sua disciplina transforma.">
+  <title>GR Fit | Forjando Campeões</title>
+ <link rel="icon" type="image/png" href="Logo fitness com fisiculturista e arco ciano neon.png">
+  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="GRFIT-Mobile.css".>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<!-- ABERTURA CINEMATOGRÁFICA GR FIT -->
+<div id="grfitIntro" class="grfit-intro"
+     role="status" aria-label="Apresentação GR Fit">
+
+  <div class="intro-glow"></div>
+
+  <div class="intro-content">
+
+    <img src="assets/logo.png"
+         alt="GR Fit"
+         class="intro-logo">
+
+    <span class="intro-tag">
+      DISCIPLINA • FORÇA • SUPERAÇÃO
+    </span>
+
+    <h1 class="intro-title">
+      GR <span>FIT</span>
+    </h1>
+
+    <p class="intro-slogan">
+      FORJANDO CAMPEÕES.
+    </p>
+
+    <div class="intro-progress">
+      <span></span>
+    </div>
+
+    <button type="button" id="skipIntro" class="intro-skip">
+      Pular apresentação
+    </button>
+
+  </div>
+</div>
+<!-- FIM DA ABERTURA -->
+<header class="header">
+  
+<script>
+  document.documentElement.classList.add("grfit-intro-enabled");
+</script>
+  
+<!-- NAVEGAÇÃO RETRÁTIL GR FIT -->
+<div class="nav-reveal-area">
+  <nav class="navigation" id="mainNavigation">
+
+    <a href="#" onclick="showPage('home'); return false;">Início</a>
+
+    <a href="#" onclick="showPage('about'); return false;">Sobre</a>
+
+    <button class="btn-outline"
+      onclick="showPage('entry')">
+      Entrar
+    </button>
+
+    <button class="btn-primary"
+      onclick="showPage('professional')">
+      Seja profissional
+    </button>
+
+    <div class="theme-menu">
+      <button
+        class="theme-menu-button"
+        onclick="toggleThemeMenu()"
+        aria-label=Alterar aparência">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="theme-dropdown" id="themeDropdown">
+        <button onclick="setTheme('blue')">🔵 Modo azul</button>
+        <button onclick="setTheme('dark')">🌙 Modo escuro</button>
+        <button onclick="setTheme('light')">☀️ Modo claro</button>
+      </div>
+    </div>
+
+  </nav>
+</div>
+
+  <button class="menu-mobile" onclick="toggleMenu()"
+          aria-label="Abrir menu" aria-expanded="false">
+    <svg viewBox="0 0 24 24" width="26" height="26"
+         fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>
+  </button>
+</header>
+
+<main>
+
+  <!-- INÍCIO -->
+  <section id="home" class="page active">
+    <div class="hero">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <img src="logo.png" class="hero-logo" alt="GR Fit">
+
+        <span class="hero-tag">DISCIPLINA • FORÇA • SUPERAÇÃO</span>
+
+        <div class="hero-brand">
+          <span>GR-FIT</span>
+          <strong>FORJANDO CAMPEÕES.</strong>
+        </div>
+
+        <div class="hero-buttons">
+          <button class="btn-primary btn-large" onclick="showPage('entry')">
+            Entrar na plataforma
+          </button>
+
+          <button class="btn-outline btn-large" onclick="showPage('professional')">
+            Seja um profissional
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="about" class="page">
+    <div class="about-page">
+      <span class="section-tag">CONHEÇA NOSSA HISTÓRIA</span>
+      <h1>Sobre a <span>GR Fit</span></h1>
+
+      <p class="about-intro">
+        A GR Fit nasceu com a proposta de aproximar tecnologia e esporte,
+        criando um ambiente digital que facilite a conexão entre alunos
+        e profissionais e a organização das atividades esportivas.
+      </p>
+
+      <div class="about-block">
+        <h2>Por que a GR Fit foi criada?</h2>
+        <p>
+          A proposta surgiu da percepção de que alunos e profissionais
+          precisam de um espaço organizado para manter a comunicação,
+          compartilhar treinamentos e acompanhar informações relacionadas
+          às atividades esportivas.
+        </p>
+      </div>
+
+      <div class="about-block">
+        <h2>Qual é o objetivo da plataforma?</h2>
+        <p>
+          Oferecer ferramentas digitais para organizar treinos, registrar
+          avaliações, acompanhar informações de progresso e facilitar
+          o relacionamento entre alunos e profissionais.
+        </p>
+      </div>
+
+      <div class="about-block">
+        <h2>O que a GR Fit oferece?</h2>
+
+        <div class="about-features">
+          <article class="feature-card">
+            <h3>Organização</h3>
+            <p>Centralização de informações e atividades esportivas.</p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Conexão</h3>
+            <p>Integração entre alunos e profissionais autorizados.</p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Acompanhamento</h3>
+            <p>Registros de treinos, avaliações e informações de progresso.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="about-block founders">
+        <span class="section-tag">IDEALIZAÇÃO DO PROJETO</span>
+        <h2>Quem está por trás da GR Fit?</h2>
+        <p>
+          A ideia da GR Fit foi idealizada por Edson Mateus,
+          juntamente com seus professores Ricardo Barreto e Gedeon Cordeiro.
+          A proposta une iniciativa, educação e tecnologia para desenvolver
+          uma solução voltada ao universo esportivo.
+        </p>
+      </div>
+
+      <button class="btn-primary" onclick="showPage('entry')">
+        Conhecer a plataforma
+      </button>
+    </div>
+  </section>
+
+  <!-- ESCOLHA DE CONTA -->
+  <section id="entry" class="page">
+    <div class="form-container">
+      <button class="back-button top-back" onclick="showPage('home')">← Início</button>
+      <img src="logo.png" class="form-logo" alt="GR Fit">
+
+      <span class="section-tag">BEM-VINDO À GR FIT</span>
+      <h2>Entrar na plataforma</h2>
+      <p class="form-description">Escolha o tipo de conta para continuar.</p>
+
+      <div class="account-options">
+        <button class="account-card" onclick="showPage('student')">
+          <h3>Sou aluno</h3>
+          <p>Acesse seus treinos e informações esportivas.</p>
+          <span class="card-action">Continuar →</span>
+        </button>
+
+        <button class="account-card" onclick="showPage('professionalLogin')">
+          <h3>Sou profissional</h3>
+          <p>Acesse sua área profissional e gerencie seus alunos.</p>
+          <span class="card-action">Continuar →</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGIN ALUNO -->
+  <section id="student" class="page">
+    <div class="form-container">
+      <button class="back-button top-back" onclick="showPage('entry')">← Voltar</button>
+      <img src="logo.png" class="form-logo" alt="GR Fit">
+
+      <h2>Área do aluno</h2>
+      <p class="form-description">Entre com sua conta e informe o código do profissional.</p>
+
+      <form id="studentForm">
+        <label for="studentEmail">E-mail</label>
+        <input id="studentEmail" type="email" placeholder="Seu e-mail"
+               autocomplete="email" required>
+
+        <label for="studentPassword">Senha</label>
+        <input id="studentPassword" type="password" placeholder="Sua senha"
+               autocomplete="current-password" required>
+
+        <label for="studentCode">Código do profissional</label>
+        <input id="studentCode" type="text"
+               placeholder="Código recebido do profissional" required>
+
+        <button class="btn-primary full-button" type="submit">Entrar como aluno</button>
+        <p id="studentMessage" class="form-message" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- LOGIN PROFISSIONAL -->
+  <section id="professionalLogin" class="page">
+    <div class="form-container">
+      <button class="back-button top-back" onclick="showPage('entry')">← Voltar</button>
+      <img src="logo.png" class="form-logo" alt="GR Fit">
+
+      <h2>Área profissional</h2>
+      <p class="form-description">Entre para acessar seu painel.</p>
+
+      <form id="professionalLoginForm">
+        <label for="professionalEmail">E-mail</label>
+        <input id="professionalEmail" type="email" placeholder="Seu e-mail" required>
+
+        <label for="professionalPassword">Senha</label>
+        <input id="professionalPassword" type="password" placeholder="Sua senha" required>
+
+        <button class="btn-primary full-button" type="submit">Entrar</button>
+        <p id="professionalLoginMessage" class="form-message" role="status"></p>
+      </form>
+
+      <p class="register-link">
+        Ainda não possui cadastro?
+        <a href="#" onclick="showPage('professional'); return false;">Cadastre-se</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- CADASTRO PROFISSIONAL -->
+  <section id="professional" class="page">
+    <div class="professional-container">
+
+      <div class="professional-heading">
+        <button class="back-button top-back" onclick="showPage('home')">← Início</button>
+        <img src="logo.png" class="form-logo" alt="GR Fit">
+
+        <span class="section-tag">FAÇA PARTE DA GR FIT</span>
+        <h2>Cadastro profissional</h2>
+        <p class="form-description">Apresente seu trabalho e escolha seu plano.</p>
+      </div>
+
+      <form id="professionalForm">
+        <div class="form-grid">
+
+          <div class="form-field full">
+            <label for="professionalName">Nome completo</label>
+            <input id="professionalName" type="text"
+                   placeholder="Seu nome completo" required>
+          </div>
+
+          <div class="form-field">
+            <label for="registerEmail">E-mail</label>
+            <input id="registerEmail" type="email" placeholder="Seu e-mail" required>
+          </div>
+
+          <div class="form-field">
+            <label for="professionalPhone">Telefone</label>
+            <input id="professionalPhone" type="tel"
+                   placeholder="(00) 00000-0000" required>
+          </div>
+
+          <div class="form-field">
+            <label for="registerPassword">Senha</label>
+            <input id="registerPassword" type="password" minlength="8"
+                   placeholder="Mínimo de 8 caracteres" required>
+          </div>
+
+          <div class="form-field">
+            <label for="confirmPassword">Confirmar senha</label>
+            <input id="confirmPassword" type="password" minlength="8"
+                   placeholder="Repita sua senha" required>
+          </div>
+
+          <div class="form-field full">
+            <label for="professionalDescription">Apresentação profissional</label>
+            <textarea id="professionalDescription" maxlength="1000"
+                      placeholder="Conte sobre sua experiência e atuação..." required></textarea>
+          </div>
+
+          <div class="form-field full">
+            <label for="professionalSpecialty">Especialidade principal</label>
+            <select id="professionalSpecialty" required>
+              <option value="">Selecione sua especialidade</option>
+              <option value="musculacao">Musculação</option>
+              <option value="personal">Personal Trainer</option>
+              <option value="natacao">Natação</option>
+              <option value="lutas">Artes marciais</option>
+              <option value="corrida">Corrida</option>
+              <option value="preparacao">Preparação física</option>
+              <option value="outra">Outra modalidade</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="plans-section">
+          <span class="section-tag">PLANOS PROFISSIONAIS</span>
+          <h3>Escolha seu plano</h3>
+          <p class="form-description">Compare os períodos de assinatura.</p>
+
+          <div class="plans-grid">
+
+            <label class="plan-card">
+              <input type="radio" name="plan" value="mensal" required>
+              <span class="plan-name">Mensal</span>
+              <strong>R$ 29,90</strong>
+              <small>30 dias</small>
+              <span class="plan-description">Flexibilidade para começar.</span>
+            </label>
+
+            <label class="plan-card featured-plan">
+              <span class="plan-badge">MAIS ECONÔMICO</span>
+              <input type="radio" name="plan" value="semestral">
+              <span class="plan-name">Semestral</span>
+              <strong>R$ 149,90</strong>
+              <small>6 meses</small>
+              <span class="plan-description">Mais tempo para desenvolver seu trabalho.</span>
+            </label>
+
+            <label class="plan-card">
+              <input type="radio" name="plan" value="anual">
+              <span class="plan-name">Anual</span>
+              <strong>R$ 249,90</strong>
+              <small>12 meses</small>
+              <span class="plan-description">Planejamento de longo prazo.</span>
+            </label>
+
+          </div>
+
+          <p class="price-note">
+            Valores propostos. A contratação e ativação dependem da futura integração de pagamento.
+          </p>
+        </div>
+
+        <div class="terms">
+          <input type="checkbox" id="acceptTerms" required>
+          <label for="acceptTerms">
+            Li e concordo com os
+            <button type="button" class="terms-link" onclick="openTerms()">
+              Termos de Uso e Política de Privacidade
+            </button>.
+          </label>
+        </div>
+
+        <button class="btn-primary full-button" type="submit">Criar minha conta</button>
+        <p id="professionalMessage" class="form-message" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- PAINEL PROFISSIONAL -->
+  <section id="professionalDashboard" class="page dashboard-page">
+    <div class="dashboard">
+
+      <aside class="dashboard-sidebar">
+        <img src="logo.png" alt="GR Fit" class="dashboard-logo">
+        <span class="sidebar-label">ÁREA PROFISSIONAL</span>
+
+<button class="side-link active" onclick="showDashboardTab('proOverview',this)">
+  <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z"/>
+  </svg>
+  <span>Painel principal</span>
+</button>
+
+<button class="side-link" onclick="showDashboardTab('proStudents',this)">
+  <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+    <circle cx="10" cy="7" r="4"/>
+    <path d="M20 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+  </svg>
+  <span>Alunos</span>
+</button>
+
+<button class="side-link" onclick="showDashboardTab('proWorkouts',this)">
+  <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M6 5h12M6 12h12M6 19h12"/>
+    <path d="M3 5h.01M3 12h.01M3 19h.01"/>
+  </svg>
+  <span>Treinos</span>
+</button>
+
+<button class="side-link" onclick="showDashboardTab('proProgress',this)">
+  <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M3 3v18h18"/>
+    <path d="m8 15 4-5 4 3 5-7"/>
+  </svg>
+  <span>Progresso</span>
+</button>
+
+<button class="side-link" onclick="showDashboardTab('proAssessments',this)">
+  <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M9 11l3 3L22 4"/>
+    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+  </svg>
+  <span>Avaliações</span>
+</button>
+
+<button class="side-link" onclick="showDashboardTab('proSubscription',this)">
+  <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="3" y="5" width="18" height="14" rx="2"/>
+    <path d="M3 10h18M7 15h4"/>
+  </svg>
+  <span>Assinatura</span>
+</button>
+
+<button class="side-link" onclick="showDashboardTab('proSettings',this)">
+  <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="12" cy="12" r="3"/>
+    <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-1.7 2.94-.08-.03a1.7 1.7 0 0 0-1.83.35l-.07.06h-3.4l-.07-.06a1.7 1.7 0 0 0-1.83-.35l-.08.03-1.7-2.94.06-.06A1.7 1.7 0 0 0 9.4 15l-.03-.08v-3.4l.03-.08a1.7 1.7 0 0 0-.34-1.88L9 9.5l1.7-2.94.08.03a1.7 1.7 0 0 0 1.83-.35l.07-.06h3.4l.07.06a1.7 1.7 0 0 0 1.83.35l.08-.03 1.7 2.94-.06.06A1.7 1.7 0 0 0 19.4 11l.03.08v3.4z"/>
+  </svg>
+  <span>Configurações</span>
+</button>
+
+<button class="side-link logout-link" onclick="logout()">
+  <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M10 17l5-5-5-5M15 12H3"/>
+    <path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7"/>
+  </svg>
+  <span>Sair da conta</span>
+</button>
+
+
+      </aside>
+
+      <div class="dashboard-content">
+
+        <div class="dashboard-topbar">
+          <button
+          class="dashboard-menu-toggle"
+          type="button"
+          onclick="toggleDashboardMenu(this)"
+          aria-expanded="false"
+          aria-label="Abrir menu"
+          >
+          ☰
+          </button>
+          <div>
+            <span class="section-tag">GR FIT PROFISSIONAL</span>
+            <h1 id="professionalWelcome">Painel principal</h1>
+          </div>
+          </div>
+          
+        <div id="proOverview" class="dashboard-tab active">
+          <h2>Visão geral</h2>
+          <p class="form-description">Acompanhe as atividades da sua área profissional.</p>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span>Alunos</span>
+              <strong id="professionalStudentCount">0</strong>
+            </article>
+            <article class="stat-card">
+              <span>Treinos publicados</span>
+              <strong id="professionalWorkoutCount">0</strong>
+            </article>
+            <article class="stat-card">
+              <span>Avaliações</span>
+              <strong id="professionalAssessmentCount">0</strong>
+            </article>
+          </div>
+
+          <div class="panel-card">
+            <h3>Seu código de convite</h3>
+            <p>Compartilhe seu código com alunos para solicitar o vínculo à sua conta.</p>
+            <strong id="professionalInviteCode">Ainda não gerado</strong>
+            <button class="btn-primary" id="generateInviteButton" type="button">
+              Gerar código de convite
+            </button>
+            <p id="inviteMessage" class="form-message"></p>
+          </div>
+        </div>
+
+        <div id="proStudents" class="dashboard-tab">
+          <h2>Meus alunos</h2>
+          <p class="form-description">Alunos vinculados à sua conta profissional.</p>
+          <div id="professionalStudentsList" class="data-list"></div>
+        </div>
+
+        <div id="proWorkouts" class="dashboard-tab">
+          <h2>Treinos</h2>
+
+          <form id="workoutForm" class="panel-card">
+            <label for="workoutName">Nome do treino</label>
+            <input id="workoutName" required placeholder="Ex.: Treino A">
+
+            <label for="workoutDay">Dia</label>
+            <input id="workoutDay" placeholder="Ex.: Segunda-feira">
+
+            <label for="workoutStudent">ID do aluno</label>
+            <input id="workoutStudent" placeholder="ID do aluno vinculado">
+
+            <label for="workoutExercises">Exercícios e orientações</label>
+            <textarea id="workoutExercises" required placeholder="Descreva os exercícios..."></textarea>
+
+            <label for="workoutVideo">Link de vídeo demonstrativo</label>
+            <input id="workoutVideo" type="url" placeholder="https://">
+
+            <label for="workoutNotes">Observações</label>
+            <textarea id="workoutNotes" placeholder="Orientações adicionais"></textarea>
+
+            <button class="btn-primary" type="submit">Publicar treino</button>
+            <p id="workoutMessage" class="form-message"></p>
+          </form>
+
+          <div id="professionalWorkoutsList" class="data-list"></div>
+        </div>
+
+        <div id="proProgress" class="dashboard-tab">
+          <h2>Progresso</h2>
+          <p class="form-description">Consulte os registros disponíveis dos seus alunos.</p>
+          <div id="professionalProgressList" class="data-list"></div>
+        </div>
+
+        <div id="proAssessments" class="dashboard-tab">
+          <h2>Avaliações</h2>
+
+          <form id="assessmentForm" class="panel-card">
+            <label for="assessmentStudent">ID do aluno</label>
+            <input id="assessmentStudent" required>
+
+            <label for="assessmentMass">Massa corporal (kg)</label>
+            <input id="assessmentMass" type="number" step="0.01">
+
+            <label for="assessmentFat">Percentual de gordura (%)</label>
+            <input id="assessmentFat" type="number" step="0.01">
+
+            <label for="assessmentWaist">Cintura (cm)</label>
+            <input id="assessmentWaist" type="number" step="0.01">
+
+            <label for="assessmentHip">Quadril (cm)</label>
+            <input id="assessmentHip" type="number" step="0.01">
+
+            <label for="assessmentNotes">Observações</label>
+            <textarea id="assessmentNotes"></textarea>
+
+            <button class="btn-primary" type="submit">Salvar avaliação</button>
+            <p id="assessmentMessage" class="form-message"></p>
+          </form>
+
+          <div id="professionalAssessmentsList" class="data-list"></div>
+        </div>
+
+        <div id="proSubscription" class="dashboard-tab">
+          <h2>Minha assinatura</h2>
+          <div class="panel-card">
+            <p>Plano: <strong id="professionalPlan">Não identificado</strong></p>
+            <p>Status: <strong id="professionalSubscriptionStatus">Inativo</strong></p>
+            <p class="price-note">
+              A confirmação de pagamentos dependerá da integração segura com o provedor.
+            </p>
+          </div>
+        </div>
+
+        <div id="proSettings" class="dashboard-tab">
+          <h2>Configurações</h2>
+
+        
+          <div class="panel-card">
+            <h3>Minha conta</h3>
+            <p id="professionalAccountEmail"></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PAINEL ALUNO -->
+  <section id="studentDashboard" class="page dashboard-page">
+    <div class="dashboard">
+
+      <aside class="dashboard-sidebar">
+        <img src="logo.png" alt="GR Fit" class="dashboard-logo">
+        <span class="sidebar-label">ÁREA DO ALUNO</span>
+
+<button class="side-link active" onclick="showDashboardTab('stuOverview',this)">
+  <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z"/>
+  </svg>
+  <span>Painel principal</span>
+</button>
+
+<button class="side-link" onclick="showDashboardTab('stuWorkouts',this)">
+  <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M6 5h12M6 12h12M6 19h12"/>
+    <path d="M3 5h.01M3 12h.01M3 19h.01"/>
+  </svg>
+  <span>Meus treinos</span>
+</button>
+
+<button class="side-link" onclick="showDashboardTab('stuProgress',this)">
+  <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M3 3v18h18"/>
+    <path d="m8 15 4-5 4 3 5-7"/>
+  </svg>
+  <span>Meu progresso</span>
+</button>
+
+<button class="side-link" onclick="showDashboardTab('stuAssessments',this)">
+  <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M9 11l3 3L22 4"/>
+    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+  </svg>
+  <span>Avaliações</span>
+</button>
+
+<button class="side-link" onclick="showDashboardTab('stuSettings',this)">
+  <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="12" cy="12" r="3"/>
+    <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-1.7 2.94-.08-.03a1.7 1.7 0 0 0-1.83.35l-.07.06h-3.4l-.07-.06a1.7 1.7 0 0 0-1.83-.35l-.08.03-1.7-2.94.06-.06A1.7 1.7 0 0 0 9.4 15l-.03-.08v-3.4l.03-.08a1.7 1.7 0 0 0-.34-1.88L9 9.5l1.7-2.94.08.03a1.7 1.7 0 0 0 1.83-.35l.07-.06h3.4l.07.06a1.7 1.7 0 0 0 1.83.35l.08-.03 1.7 2.94-.06.06A1.7 1.7 0 0 0 19.4 11l.03.08v3.4z"/>
+  </svg>
+  <span>Configurações</span>
+</button>
+
+<button class="side-link logout-link" onclick="logout()">
+  <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M10 17l5-5-5-5M15 12H3"/>
+    <path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7"/>
+  </svg>
+  <span>Sair da conta</span>
+</button>
+
+
+      </aside>
+
+      <div class="dashboard-content">
+
+        <div class="dashboard-topbar">
+          <button
+          class="dashboard-menu-toggle"
+           type="button"
+           onclick="toggleDashboardMenu(this)"
+           aria-expanded="false"
+           aria-label="Abrir menu"
+           >
+           ☰
+          </button>
+          <div>
+            <span class="section-tag">GR FIT ALUNO</span>
+            <h1 id="studentWelcome">Painel principal</h1>
+          </div>
+        </div>
+
+        <div id="stuOverview" class="dashboard-tab active">
+          <h2>Bem-vindo à sua área</h2>
+          <p class="form-description">Aqui você poderá consultar seus treinos e avaliações.</p>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span>Treinos disponíveis</span>
+              <strong id="studentWorkoutCount">0</strong>
+            </article>
+            <article class="stat-card">
+              <span>Treinos concluídos</span>
+              <strong id="studentCompletedCount">0</strong>
+            </article>
+            <article class="stat-card">
+              <span>Avaliações</span>
+              <strong id="studentAssessmentCount">0</strong>
+            </article>
+          </div>
+
+          <div class="panel-card">
+            <h3>Meu profissional</h3>
+            <div id="studentProfessionalInfo">Carregando vínculo...</div>
+          </div>
+        </div>
+
+        <div id="stuWorkouts" class="dashboard-tab">
+          <h2>Meus treinos</h2>
+          <div id="studentWorkoutsList" class="data-list"></div>
+        </div>
+
+        <div id="stuProgress" class="dashboard-tab">
+          <h2>Meu progresso</h2>
+          <div id="studentProgressList" class="data-list"></div>
+        </div>
+
+        <div id="stuAssessments" class="dashboard-tab">
+          <h2>Minhas avaliações</h2>
+          <div id="studentAssessmentsList" class="data-list"></div>
+        </div>
+
+        <div id="stuSettings" class="dashboard-tab">
+          <h2>Configurações</h2>
+
+
+          <div class="panel-card">
+            <h3>Minha conta</h3>
+            <p id="studentAccountEmail"></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGIN ADMINISTRATIVO -->
+  <section id="adminLogin" class="page">
+    <div class="form-container">
+      <button class="back-button top-back" onclick="showPage('home')">← Início</button>
+      <img src="logo.png" class="form-logo" alt="GR Fit">
+
+      <span class="section-tag">ACESSO RESTRITO</span>
+      <h2>Painel administrativo</h2>
+      <p class="form-description">Acesso exclusivo para administradores autorizados.</p>
+
+      <form id="adminLoginForm">
+        <label for="adminEmail">E-mail</label>
+        <input id="adminEmail" type="email" autocomplete="username" required>
+
+        <label for="adminPassword">Senha</label>
+        <input id="adminPassword" type="password" autocomplete="current-password" required>
+
+        <button class="btn-primary full-button" type="submit">
+          Entrar como administrador
+        </button>
+
+        <p id="adminLoginMessage" class="form-message"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- PAINEL ADMINISTRATIVO -->
+  <section id="adminDashboard" class="page dashboard-page">
+    <div class="dashboard">
+
+      <aside class="dashboard-sidebar admin-sidebar">
+        <img src="logo.png" alt="GR Fit" class="dashboard-logo">
+        <span class="sidebar-label">ADMINISTRAÇÃO</span>
+        <button class="side-link active" onclick="showDashboardTab('admOverview',this)">
+  <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z"/>
+  </svg>
+  <span>Visão geral</span>
+</button>
+
+<button class="side-link" onclick="showDashboardTab('admUsers',this)">
+  <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+    <circle cx="10" cy="7" r="4"/>
+    <path d="M20 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+  </svg>
+  <span>Usuários</span>
+</button>
+
+<button class="side-link" onclick="showDashboardTab('admTeam',this)">
+  <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/>
+    <path d="m9 12 2 2 4-4"/>
+  </svg>
+  <span>Equipe administrativa</span>
+</button>
+
+<button class="side-link" onclick="showDashboardTab('admPlans',this)">
+  <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <rect x="2" y="5" width="20" height="14" rx="2"/>
+    <path d="M2 10h20M6 15h4"/>
+  </svg>
+  <span>Planos e assinaturas</span>
+</button>
+
+<button class="side-link" onclick="showDashboardTab('admFinance',this)">
+  <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M3 3v18h18"/>
+    <path d="m8 15 4-5 4 3 5-7"/>
+  </svg>
+  <span>Financeiro</span>
+</button>
+
+<button class="side-link" onclick="showDashboardTab('admSupport',this)">
+  <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M3 14v-3a9 9 0 0 1 18 0v3"/>
+    <rect x="2" y="13" width="4" height="7" rx="2"/>
+    <rect x="18" y="13" width="4" height="7" rx="2"/>
+    <path d="M18 20a6 6 0 0 1-6 2h-2"/>
+  </svg>
+  <span>Suporte</span>
+</button>
+
+<button class="side-link" onclick="showDashboardTab('admAudit',this)">
+  <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+    <path d="M14 2v6h6M8 13h8M8 17h8"/>
+  </svg>
+  <span>Auditoria</span>
+</button>
+
+<button class="side-link" onclick="showDashboardTab('admSettings',this)">
+  <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="12" cy="12" r="3"/>
+    <path d="m19.4 15 .1.1 1.4 1.1-1.4 2.4-1.7-.6a8 8 0 0 1-1.7 1l-.3 1.8h-2.8l-.3-1.8a8 8 0 0 1-1.7-1l-1.7.6-1.4-2.4 1.4-1.1a8 8 0 0 1 0-2l-1.4-1.1 1.4-2.4 1.7.6a8 8 0 0 1 1.7-1l.3-1.8h2.8l.3 1.8a8 8 0 0 1 1.7 1l1.7-.6 1.4 2.4-1.4 1.1a8 8 0 0 1 0 2z"/>
+  </svg>
+  <span>Configurações</span>
+</button>
+
+<button class="side-link logout-link" onclick="logout()">
+  <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M10 17l5-5-5-5M15 12H3"/>
+    <path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7"/>
+  </svg>
+  <span>Sair da administração</span>
+</button>
+      </aside>
+
+      <div class="dashboard-content">
+
+        <div class="dashboard-topbar">
+
+          <button
+          class="dashboard-menu-toggle"
+          type="button"
+          onclick="toggleDashboardMenu(this)"
+          aria-expanded="false"
+          aria-label="Abrir menu"
+         >
+         ☰
+          </button>
+          <div>
+            <span class="section-tag">CONTROLE CENTRAL</span>
+            <h1>Painel administrativo</h1>
+            <p class="form-description" id="adminWelcome">Administração GR Fit</p>
+          </div>
+        </div>
+
+        <div id="admOverview" class="dashboard-tab active">
+          <h2>Visão geral da plataforma</h2>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span>Usuários</span>
+              <strong id="adminUserCount">—</strong>
+            </article>
+            <article class="stat-card">
+              <span>Profissionais</span>
+              <strong id="adminProfessionalCount">—</strong>
+            </article>
+            <article class="stat-card">
+              <span>Alunos</span>
+              <strong id="adminStudentCount">—</strong>
+            </article>
+          </div>
+
+          <div class="panel-card">
+            <h3>Bem-vindo à administração</h3>
+            <p>Gerencie a plataforma, acompanhe os usuários e controle as permissões da equipe.</p>
+          </div>
+        </div>
+
+        <div id="admUsers" class="dashboard-tab">
+          <h2>Usuários</h2>
+          <div class="panel-card">
+            <p>Consulta e gerenciamento de alunos e profissionais.</p>
+            <div id="adminUsersList" class="data-list"></div>
+          </div>
+        </div>
+
+        <div id="admTeam" class="dashboard-tab">
+          <h2>Equipe administrativa</h2>
+          <p class="form-description">
+            Somente o administrador principal poderá criar e aprovar novos administradores.
+          </p>
+
+          <form id="adminInviteForm" class="panel-card">
+            <h3>Enviar convite administrativo</h3>
+
+            <label for="adminInviteName">Nome do convidado</label>
+            <input id="adminInviteName" required>
+
+            <label for="adminInviteEmail">E-mail autorizado</label>
+            <input id="adminInviteEmail" type="email" required>
+
+            <label for="adminInvitePermissions">Permissões iniciais</label>
+            <select id="adminInvitePermissions">
+              <option value="viewer">Somente visualização</option>
+              <option value="users">Gerenciar usuários</option>
+              <option value="support">Gerenciar suporte</option>
+              <option value="finance">Consultar financeiro</option>
+              <option value="operations">Gestão operacional</option>
+            </select>
+
+            <button class="btn-primary" type="submit">Criar convite</button>
+            <p id="adminInviteMessage" class="form-message"></p>
+          </form>
+
+          <div class="panel-card">
+            <h3>Convites e solicitações</h3>
+            <div id="adminInvitesList" class="data-list"></div>
+          </div>
+
+          <div class="panel-card">
+            <h3>Administradores autorizados</h3>
+            <div id="adminTeamList" class="data-list"></div>
+          </div>
+        </div>
+
+        <div id="admPlans" class="dashboard-tab">
+          <h2>Planos e assinaturas</h2>
+          <div id="adminSubscriptionsList" class="data-list"></div>
+        </div>
+
+        <div id="admFinance" class="dashboard-tab">
+          <h2>Financeiro</h2>
+          <div class="panel-card">
+            <p>Os valores financeiros serão apresentados somente após confirmação do provedor de pagamentos.</p>
+            <div id="adminFinanceData"></div>
+          </div>
+        </div>
+
+        <div id="admSupport" class="dashboard-tab">
+          <h2>Suporte</h2>
+          <div id="adminSupportList" class="data-list"></div>
+        </div>
+
+        <div id="admAudit" class="dashboard-tab">
+          <h2>Histórico de ações</h2>
+          <div id="adminAuditList" class="data-list"></div>
+        </div>
+
+        <div id="admSettings" class="dashboard-tab">
+          <h2>Configurações administrativas</h2>
+          
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TERMOS -->
+  <div id="termsModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeTerms()" aria-label="Fechar">×</button>
+
+      <span class="section-tag">GR FIT</span>
+      <h2>Termos de Uso e Privacidade</h2>
+
+      <h3>1. Utilização da plataforma</h3>
+      <p>
+        A GR Fit conecta alunos e profissionais para organização de treinamentos
+        e informações esportivas. É proibido utilizar a plataforma para atividades
+        ilegais ou fraudulentas.
+      </p>
+
+      <h3>2. Responsabilidade profissional</h3>
+      <p>
+        Os profissionais são responsáveis pelas orientações e informações que
+        publicam, respeitando suas qualificações e limites de atuação.
+      </p>
+
+      <h3>3. Responsabilidade do aluno</h3>
+      <p>
+        O aluno deve fornecer informações verdadeiras e utilizar os recursos
+        da plataforma de maneira responsável.
+      </p>
+
+      <h3>4. Proteção de dados</h3>
+      <p>
+        Os dados pessoais serão utilizados para autenticação, funcionamento
+        da plataforma e prestação dos serviços, conforme a legislação aplicável
+        e a LGPD.
+      </p>
+
+      <h3>5. Segurança</h3>
+      <p>
+        A GR Fit adota controles de acesso e medidas de segurança.
+        Nenhum sistema pode garantir proteção absoluta.
+      </p>
+
+      <h3>6. Contas e suspensão</h3>
+      <p>
+        Contas que violem as regras poderão ser suspensas ou encerradas,
+        respeitados os procedimentos aplicáveis.
+      </p>
+
+      <h3>7. Planos e pagamentos</h3>
+      <p>
+        Valores, prazos, renovações e condições de cancelamento deverão
+        ser informados antes da contratação. O cadastro não confirma pagamento.
+      </p>
+
+      <h3>8. Suporte</h3>
+      <p>
+        Contato:
+        <a href="mailto:suportes.grfit@gmail.com">suportes.grfit@gmail.com</a>
+      </p>
+
+      <p class="terms-disclaimer">
+        Esta é uma versão inicial e deverá passar por revisão antes da disponibilização comercial.
+      </p>
+
+      <button class="btn-primary full-button" onclick="closeTerms()">Entendi</button>
+    </div>
+  </div>
+
+</main>
+
+<!-- RODAPÉ -->
+<footer class="footer">
+  <div class="footer-support">
+    <a href="mailto:suportes.grfit@gmail.com">suportes.grfit@gmail.com</a>
+  </div>
+
+  <p class="footer-security">
+    Segurança, responsabilidade e proteção de dados.
+  </p>
+
+  <p class="footer-copy">© 2026 GR Fit — Sua evolução.</p>
+
+  <a class="footer-admin-link" href="#"
+     onclick="showPage('adminLogin'); return false;">
+    Acesso administrativo
+  </a>
+</footer>
+
+<!-- SUPABASE E JAVASCRIPT DA PLATAFORMA -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="script.js" defer></script>
+
+</body>
+</html>
