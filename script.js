@@ -173,7 +173,9 @@ function toggleMenu() {
 
 /* 5. TEMAS */
 
+
 function setTheme(theme) {
+
   const allowedThemes = ["blue", "dark", "light"];
 
   if (!allowedThemes.includes(theme)) {
@@ -188,25 +190,65 @@ function setTheme(theme) {
     console.warn("Não foi possível salvar o tema.", error);
   }
 
-  $$(".theme-options button").forEach(button => {
+  // Atualiza a seleção do menu principal
+  document.querySelectorAll(
+    ".theme-dropdown button[data-theme]"
+  ).forEach(button => {
+
+    const selected = button.dataset.theme === theme;
+
+    button.classList.toggle("active", selected);
+    button.setAttribute("aria-pressed", String(selected));
+
+  });
+
+  // Mantém compatibilidade com as opções internas
+  document.querySelectorAll(
+    ".theme-options button"
+  ).forEach(button => {
+
     button.classList.toggle(
       "active",
       button.dataset.theme === theme
     );
+
   });
+
+  // Fecha o menu depois da escolha
+  const dropdown = document.getElementById("themeDropdown");
+
+  if (dropdown) {
+    dropdown.classList.remove("open");
+  }
+
 }
 
 function loadTheme() {
-  let savedTheme = "blue";
 
-  try {
-    savedTheme = localStorage.getItem("grfit_theme") || "blue";
-  } catch (error) {
-    console.warn("Não foi possível recuperar o tema.", error);
-  }
+    let savedTheme = "blue";
 
-  setTheme(savedTheme);
+    try {
+        savedTheme = localStorage.getItem("grfit_theme") || "blue";
+    } catch (error) {
+        console.warn("Erro ao carregar tema:", error);
+    }
+
+    setTheme(savedTheme);
 }
+
+function toggleThemeMenu() {
+
+  const dropdown = document.getElementById("themeDropdown");
+  const button = document.querySelector(".theme-menu-button");
+
+  if (!dropdown || !button) return;
+
+  const opened = dropdown.classList.toggle("open");
+
+  button.setAttribute("aria-expanded", String(opened));
+
+}
+
 
 /* 6. TERMOS */
 

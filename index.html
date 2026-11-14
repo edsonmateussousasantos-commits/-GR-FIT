@@ -7,12 +7,12 @@
   <meta name="theme-color" content="#071a36">
   <meta name="description" content="GR Fit — Sua força constrói. Sua disciplina transforma.">
   <title>GR Fit | Forjando Campeões</title>
- <link rel="icon" type="image/png" href="Logo fitness com fisiculturista e arco ciano neon.png">
+  <link rel="icon" type="image/png" href="logo.png">
   <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="GRFIT-Mobile.css".>
+<link rel="stylesheet" href="GRFIT-Mobile.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
 
   <div class="intro-content">
 
-    <img src="assets/logo.png"
+    <img src="logo.png"
          alt="GR Fit"
          class="intro-logo">
 
@@ -75,22 +75,88 @@
       Seja profissional
     </button>
 
+    
     <div class="theme-menu">
-      <button
-        class="theme-menu-button"
-        onclick="toggleThemeMenu()"
-        aria-label=Alterar aparência">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
 
-      <div class="theme-dropdown" id="themeDropdown">
-        <button onclick="setTheme('blue')">🔵 Modo azul</button>
-        <button onclick="setTheme('dark')">🌙 Modo escuro</button>
-        <button onclick="setTheme('light')">☀️ Modo claro</button>
-      </div>
+  <button
+    class="theme-menu-button"
+    onclick="toggleThemeMenu()"
+    aria-label="Alterar aparência"
+    aria-expanded="false"
+    title="Alterar aparência">
+
+    <svg viewBox="0 0 24 24"
+         width="22" height="22"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="1.8"
+         stroke-linecap="round">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
+    </svg>
+
+  </button>
+
+  <div class="theme-dropdown" id="themeDropdown">
+
+    <button data-theme="blue"
+            onclick="setTheme('blue')">
+
+      <svg viewBox="0 0 24 24" width="20" height="20"
+           fill="none" stroke="currentColor"
+           stroke-width="1.8" stroke-linecap="round"
+           stroke-linejoin="round">
+        <path d="M12 3v2"/>
+        <path d="M12 19v2"/>
+        <path d="M3 12h2"/>
+        <path d="M19 12h2"/>
+        <path d="m5.64 5.64 1.42 1.42"/>
+        <path d="m16.94 16.94 1.42 1.42"/>
+        <path d="m5.64 18.36 1.42-1.42"/>
+        <path d="m16.94 7.06 1.42-1.42"/>
+        <circle cx="12" cy="12" r="4"/>
+      </svg>
+
+      <span>Modo azul</span>
+    </button>
+
+    <button data-theme="dark"
+            onclick="setTheme('dark')">
+
+      <svg viewBox="0 0 24 24" width="20" height="20"
+           fill="none" stroke="currentColor"
+           stroke-width="1.8" stroke-linecap="round"
+           stroke-linejoin="round">
+        <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/>
+      </svg>
+
+      <span>Modo escuro</span>
+    </button>
+
+    <button data-theme="light"
+            onclick="setTheme('light')">
+
+      <svg viewBox="0 0 24 24" width="20" height="20"
+           fill="none" stroke="currentColor"
+           stroke-width="1.8" stroke-linecap="round"
+           stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2"/>
+        <path d="M12 20v2"/>
+        <path d="M4.93 4.93l1.42 1.42"/>
+        <path d="m17.65 17.65 1.42 1.42"/>
+        <path d="M2 12h2"/>
+        <path d="M20 12h2"/>
+        <path d="m4.93 19.07 1.42-1.42"/>
+        <path d="m17.65 6.35 1.42-1.42"/>
+      </svg>
+
+      <span>Modo claro</span>
+    </button>
+
+  </div>
     </div>
+
 
   </nav>
 </div>
