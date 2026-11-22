@@ -3104,3 +3104,234 @@ body[data-theme="blue"] #entry .form-logo {
         border-radius: 9px !important;
     }
 }
+
+/* =====================================
+   GR FIT — NOVO MENU RESPONSIVO
+===================================== */
+
+.grfit-header {
+    position: relative;
+    z-index: 9999;
+}
+
+/* Botão de três linhas */
+.grfit-menu-toggle {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 10002;
+    width: 48px;
+    height: 48px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 174, 255, .55);
+    border-radius: 14px;
+    color: #fff;
+    background: rgba(8, 20, 38, .92);
+    box-shadow: 0 0 18px rgba(0, 174, 255, .18);
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.grfit-menu-toggle:hover {
+    background: #087dce;
+    transform: scale(1.06);
+}
+
+/* Fundo */
+.grfit-nav-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    background: rgba(0, 0, 0, .58);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease;
+}
+
+/* Identidade visual */
+.grfit-nav-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 12px 10px 25px;
+}
+
+.grfit-nav-brand img {
+    width: 145px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.grfit-nav-brand span {
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: #16baff;
+}
+
+/* Links e botões */
+.grfit-navigation a,
+.grfit-navigation > button {
+    transition: background .25s ease,
+                color .25s ease,
+                transform .25s ease,
+                box-shadow .25s ease;
+}
+
+.grfit-navigation a:hover,
+.grfit-navigation > button:hover {
+    transform: translateX(5px);
+    filter: brightness(1.15);
+}
+
+/* Temas */
+.grfit-theme-menu {
+    width: 100%;
+    margin-top: 12px;
+}
+
+.grfit-theme-menu .theme-menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.grfit-theme-menu .theme-dropdown {
+    display: none;
+    position: relative;
+    width: 100%;
+    margin-top: 8px;
+    padding: 8px;
+    border-radius: 14px;
+}
+
+.grfit-theme-menu .theme-dropdown.open {
+    display: block;
+    animation: grfitThemeIn .2s ease;
+}
+
+.grfit-theme-menu .theme-dropdown button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.grfit-theme-menu .theme-dropdown button:hover {
+    background: rgba(0, 174, 255, .18);
+    transform: translateX(4px);
+}
+
+.grfit-theme-menu .theme-dropdown button.active {
+    background: rgba(0, 174, 255, .25);
+    box-shadow: inset 3px 0 #08baff;
+}
+
+/* Animação */
+@keyframes grfitThemeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-7px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CELULAR E TABLET */
+@media (max-width: 768px) {
+
+    .grfit-menu-toggle {
+        display: flex;
+    }
+
+    .nav-reveal-area {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: min(85vw, 340px);
+        height: 100dvh;
+        z-index: 10001;
+        padding: 85px 20px 30px;
+        overflow-y: auto;
+        background: rgba(5, 14, 27, .97);
+        border-left: 1px solid rgba(0, 174, 255, .35);
+        box-shadow: -15px 0 45px rgba(0, 0, 0, .4);
+        transform: translateX(105%);
+        visibility: hidden;
+        transition: transform .35s ease, visibility .35s ease;
+    }
+
+    .nav-reveal-area.is-open {
+        transform: translateX(0);
+        visibility: visible;
+    }
+
+    .grfit-nav-backdrop.is-open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .grfit-navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .grfit-navigation a,
+    .grfit-navigation > button {
+        width: 100%;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 13px 16px;
+        border-radius: 12px;
+        text-align: left;
+    }
+
+    .grfit-navigation a:hover,
+    .grfit-navigation > button:hover {
+        background: rgba(0, 174, 255, .15);
+    }
+
+    .grfit-navigation a:active,
+    .grfit-navigation > button:active {
+        background: rgba(0, 120, 220, .4);
+        transform: scale(.97);
+    }
+}
+
+/* MODO CLARO */
+html[data-theme="light"] .nav-reveal-area,
+body[data-theme="light"] .nav-reveal-area {
+    background: rgba(245, 249, 255, .98);
+    color: #14243b;
+    border-color: rgba(0, 100, 200, .2);
+}
+
+html[data-theme="light"] .grfit-menu-toggle,
+body[data-theme="light"] .grfit-menu-toggle {
+    background: #fff;
+    color: #087dce;
+}
+
+/* MODO AZUL */
+html[data-theme="blue"] .nav-reveal-area,
+body[data-theme="blue"] .nav-reveal-area {
+    background: rgba(5, 31, 66, .98);
+}

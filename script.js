@@ -236,18 +236,7 @@ function loadTheme() {
     setTheme(savedTheme);
 }
 
-function toggleThemeMenu() {
 
-  const dropdown = document.getElementById("themeDropdown");
-  const button = document.querySelector(".theme-menu-button");
-
-  if (!dropdown || !button) return;
-
-  const opened = dropdown.classList.toggle("open");
-
-  button.setAttribute("aria-expanded", String(opened));
-
-}
 
 
 /* 6. TERMOS */
@@ -2036,37 +2025,98 @@ startCinematicIntro();
    GR FIT — MENU COMPACTO DOS DASHBOARDS
 ========================================== */
 
+/* GR FIT — MENU MOBILE DOS PAINÉIS
+   Substitua a função toggleDashboardMenu atual e o listener
+   que fecha o menu ao selecionar uma opção por este bloco. */
+
+function setDashboardMenuState(dashboard, isOpen) {
+    if (!dashboard) return;
+    dashboard.classList.toggle("menu-open", isOpen);
+
+    const button = dashboard.querySelector(".dashboard-menu-toggle");
+    const sidebar = dashboard.querySelector(".dashboard-sidebar");
+
+    if (button) {
+        button.setAttribute("aria-expanded", String(isOpen));
+        button.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+        if (sidebar) {
+            if (!sidebar.id) sidebar.id = dashboard.id + "MobileMenu";
+            button.setAttribute("aria-controls", sidebar.id);
+        }
+        button.textContent = isOpen ? "×" : "☰";
+    }
+}
+
 function toggleDashboardMenu(button) {
     const dashboard = button.closest(".dashboard");
-
     if (!dashboard) return;
+    setDashboardMenuState(dashboard, !dashboard.classList.contains("menu-open"));
+}
 
-    const isOpen = dashboard.classList.toggle("menu-open");
+document.addEventListener("click", function(event) {
+    document.querySelectorAll(".dashboard.menu-open").forEach(dashboard => {
+        const inSidebar = event.target.closest(".dashboard-sidebar");
+        const inToggle = event.target.closest(".dashboard-menu-toggle");
+        const inThisDashboard = dashboard.contains(event.target);
 
-    button.setAttribute("aria-expanded", String(isOpen));
+        if (event.target.closest(".dashboard-sidebar .side-link") && inThisDashboard) {
+            setDashboardMenuState(dashboard, false);
+        } else if (!inSidebar && !inToggle && !inThisDashboard) {
+            setDashboardMenuState(dashboard, false);
+        } else if (inThisDashboard && !inSidebar && !inToggle) {
+            setDashboardMenuState(dashboard, false);
+        }
+    });
+});
+
+document.addEventListener("keydown", function(event) {
+    if (event.key !== "Escape") return;
+    document.querySelectorAll(".dashboard.menu-open").forEach(dashboard => {
+        const button = dashboard.querySelector(".dashboard-menu-toggle");
+        setDashboardMenuState(dashboard, false);
+        button?.focus();
+    });
+});
+
+
+/* GR FIT — CONTROLE DA NAVEGAÇÃO MOBILE */
+
+function toggleMainNavigation() {
+    const area = document.getElementById("grfitNavArea");
+    const backdrop = document.querySelector(".grfit-nav-backdrop");
+    const button = document.getElementById("grfitMenuToggle");
+
+    if (!area || !backdrop || !button) return;
+
+    const isOpen = area.classList.contains("is-open");
+
+    area.classList.toggle("is-open", !isOpen);
+    backdrop.classList.toggle("is-open", !isOpen);
+
+    button.setAttribute("aria-expanded", String(!isOpen));
     button.setAttribute(
         "aria-label",
-        isOpen ? "Fechar menu" : "Abrir menu"
+        isOpen ? "Abrir menu" : "Fechar menu"
     );
 }
 
-// Fecha o menu depois de selecionar uma opção
-document.addEventListener("click", function(event) {
-    const selectedLink = event.target.closest(
-        ".dashboard-sidebar .side-link"
-    );
+function closeMainNavigation() {
+    const area = document.getElementById("grfitNavArea");
+    const backdrop = document.querySelector(".grfit-nav-backdrop");
+    const button = document.getElementById("grfitMenuToggle");
 
-    if (!selectedLink) return;
+    area?.classList.remove("is-open");
+    backdrop?.classList.remove("is-open");
 
-    const dashboard = selectedLink.closest(".dashboard");
-    if (!dashboard) return;
+    if (button) {
+        button.setAttribute("aria-expanded", "false");
+        button.setAttribute("aria-label", "Abrir menu");
+    }
+}
 
-    dashboard.classList.remove("menu-open");
-
-    const button = dashboard.querySelector(
-        ".dashboard-menu-toggle"
-    );
-
-    button?.setAttribute("aria-expanded", "false");
-    button?.setAttribute("aria-label", "Abrir menu");
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closeMainNavigation();
+    }
 });
+
