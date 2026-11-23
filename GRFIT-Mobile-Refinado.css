@@ -406,3 +406,732 @@
         z-index: 10030 !important;
     }
 }
+
+/* ==========================================
+   GR FIT — MENU PÚBLICO DEFINITIVO
+   Controle único: classe is-open
+========================================== */
+
+@media (max-width: 768px) {
+
+    /* Remove a antiga barrinha */
+    #grfitNavArea::before {
+        display: none !important;
+        content: none !important;
+    }
+
+    /* Botão hambúrguer */
+    #grfitMenuToggle {
+        display: flex !important;
+        position: fixed !important;
+        top: max(10px, env(safe-area-inset-top)) !important;
+        right: max(14px, env(safe-area-inset-right)) !important;
+        width: 46px !important;
+        height: 46px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        z-index: 10030 !important;
+    }
+
+    /* Fundo escurecido */
+    .header .grfit-nav-backdrop {
+        position: fixed !important;
+        inset: 0 !important;
+        background: rgba(0, 0, 0, .65) !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        z-index: 10010 !important;
+        transition: opacity .3s ease, visibility .3s ease !important;
+    }
+
+    .header .grfit-nav-backdrop.is-open {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+
+    /* Gaveta lateral */
+    #grfitNavArea {
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important;
+        left: auto !important;
+        width: min(340px, 85vw) !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+        min-height: 100vh !important;
+        min-height: 100dvh !important;
+
+        display: block !important;
+        padding: max(76px, calc(60px + env(safe-area-inset-top))) 18px 25px !important;
+
+        background: var(--surface) !important;
+        border-left: 1px solid var(--border) !important;
+        box-shadow: -15px 0 45px rgba(0,0,0,.35) !important;
+
+        transform: translateX(105%) !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        overscroll-behavior: contain !important;
+
+        z-index: 10020 !important;
+        transition: transform .3s ease, visibility .3s ease !important;
+    }
+
+    /* Gaveta aberta */
+    #grfitNavArea.is-open {
+        transform: translateX(0) !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+
+    /* Conteúdo interno */
+    #grfitNavArea #mainNavigation {
+        position: static !important;
+        inset: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 10px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+    }
+
+    #grfitNavArea #mainNavigation > a,
+    #grfitNavArea #mainNavigation > button {
+        display: flex !important;
+        width: 100% !important;
+        min-height: 48px !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        padding: 12px 14px !important;
+        text-align: left !important;
+        border-radius: 11px !important;
+    }
+
+    #grfitNavArea .grfit-nav-brand {
+        display: flex !important;
+        align-items: center !important;
+        margin-bottom: 15px !important;
+    }
+
+    #grfitNavArea .theme-menu {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        width: 100% !important;
+        gap: 8px !important;
+        margin-top: 10px !important;
+        padding-top: 14px !important;
+        border-top: 1px solid var(--border) !important;
+    }
+
+    #grfitNavArea .theme-dropdown {
+        position: static !important;
+        width: 100% !important;
+    }
+}
+
+/* =====================================================
+   GR FIT — NAVEGAÇÃO RESPONSIVA UNIFICADA
+   Desktop: menu fixo e horizontal
+   Mobile: gaveta lateral pela direita
+===================================================== */
+
+/* BASE DO CABEÇALHO */
+.header.grfit-header {
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    min-height: 76px !important;
+    padding: 10px 4% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: var(--header) !important;
+    border-bottom: 1px solid var(--border) !important;
+    z-index: 10000 !important;
+}
+
+/* REMOVE A ANTIGA BARRINHA */
+.nav-reveal-area::before {
+    display: none !important;
+    content: none !important;
+}
+
+/* DESKTOP — MENU SEMPRE VISÍVEL */
+@media (min-width: 769px) {
+
+    .header.grfit-header {
+        position: sticky !important;
+    }
+
+    .header .menu-mobile {
+        display: none !important;
+    }
+
+    .grfit-nav-backdrop {
+        display: none !important;
+    }
+
+    #grfitNavArea.nav-reveal-area {
+        position: static !important;
+        inset: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        transform: none !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        overflow: visible !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: 0 !important;
+    }
+
+    #mainNavigation.navigation {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 55px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 20px !important;
+        background: transparent !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        transform: none !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    #mainNavigation > a,
+    #mainNavigation > button {
+        display: inline-flex !important;
+        width: auto !important;
+        margin: 0 !important;
+    }
+
+    .grfit-nav-brand {
+        display: flex !important;
+        align-items: center !important;
+        gap: 9px !important;
+        margin: 0 15px 0 0 !important;
+    }
+
+    .grfit-nav-brand img {
+        width: 48px !important;
+        height: 48px !important;
+        object-fit: contain !important;
+    }
+
+    .grfit-nav-brand span {
+        font-size: 10px !important;
+        font-weight: 800 !important;
+        letter-spacing: 1px !important;
+    }
+}
+
+/* CELULAR E TABLET — GAVETA LATERAL */
+@media (max-width: 768px) {
+
+    .header.grfit-header {
+        position: sticky !important;
+        min-height: 66px !important;
+        padding: 8px 16px !important;
+        justify-content: flex-end !important;
+    }
+
+    /* Botão hambúrguer */
+    .header .menu-mobile {
+        position: relative !important;
+        z-index: 10003 !important;
+        display: flex !important;
+        width: 46px !important;
+        height: 46px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: var(--text) !important;
+        background: var(--surface2) !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 12px !important;
+    }
+
+    /* Fundo escuro */
+    .grfit-nav-backdrop {
+        position: fixed !important;
+        inset: 0 !important;
+        z-index: 10001 !important;
+        display: block !important;
+        background: rgba(0, 0, 0, .65) !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        transition: opacity .3s ease, visibility .3s ease !important;
+    }
+
+    .grfit-nav-backdrop.is-open {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+
+    /* Gaveta lateral */
+    #grfitNavArea.nav-reveal-area {
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important;
+        left: auto !important;
+        z-index: 10002 !important;
+        width: min(85vw, 340px) !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+        padding: 85px 20px 30px !important;
+        display: block !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        background: var(--surface) !important;
+        border-left: 1px solid var(--border) !important;
+        box-shadow: -15px 0 45px rgba(0,0,0,.35) !important;
+        transform: translateX(105%) !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        transition: transform .35s ease, visibility .35s ease !important;
+    }
+
+    #grfitNavArea.nav-reveal-area.is-open {
+        transform: translateX(0) !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+
+    /* Itens do menu */
+    #mainNavigation.navigation {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 12px !important;
+        background: transparent !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        transform: none !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    #mainNavigation > a,
+    #mainNavigation > button {
+        display: flex !important;
+        width: 100% !important;
+        min-height: 48px !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        margin: 0 !important;
+        padding: 13px 16px !important;
+        border-radius: 12px !important;
+    }
+
+    #mainNavigation .grfit-nav-brand {
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+        margin: 0 0 20px !important;
+    }
+
+    #mainNavigation .grfit-nav-brand img {
+        width: 58px !important;
+        height: 58px !important;
+        object-fit: contain !important;
+    }
+
+    #mainNavigation .theme-menu {
+        width: 100% !important;
+    }
+
+    #mainNavigation .theme-menu-button {
+        width: 100% !important;
+        justify-content: space-between !important;
+    }
+
+    #mainNavigation .theme-dropdown {
+        position: static !important;
+        width: 100% !important;
+        margin-top: 8px !important;
+    }
+}
+
+/* ==========================================
+   GR FIT — CORREÇÃO DEFINITIVA DA NAVEGAÇÃO
+   Desktop organizado + menu mobile clicável
+========================================== */
+
+/* ---------- NOTEBOOK E DESKTOP ---------- */
+
+@media (min-width: 769px) {
+
+    .header.grfit-header {
+        position: relative !important;
+        width: 100% !important;
+        min-height: 100px !important;
+        padding: 12px 28px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        overflow: visible !important;
+        z-index: 1000 !important;
+    }
+
+    .header.grfit-header .menu-mobile {
+        display: none !important;
+    }
+
+    .grfit-nav-backdrop {
+        display: none !important;
+    }
+
+    .nav-reveal-area {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+        transform: none !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        overflow: visible !important;
+        pointer-events: auto !important;
+        background: transparent !important;
+    }
+
+    .nav-reveal-area::before {
+        display: none !important;
+        content: none !important;
+    }
+
+    #mainNavigation {
+        position: relative !important;
+        width: min(1180px, 100%) !important;
+        min-height: 72px !important;
+        height: auto !important;
+        margin: 0 auto !important;
+        padding: 8px 0 !important;
+
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        gap: clamp(12px, 2vw, 28px) !important;
+
+        transform: none !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        overflow: visible !important;
+
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .grfit-nav-brand {
+        display: flex !important;
+        flex: 0 0 auto !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 auto 0 0 !important;
+        gap: 4px !important;
+    }
+
+    .grfit-nav-brand img {
+        display: block !important;
+        width: 68px !important;
+        height: 48px !important;
+        object-fit: contain !important;
+    }
+
+    .grfit-nav-brand span {
+        white-space: nowrap !important;
+        font-size: 9px !important;
+        text-align: center !important;
+    }
+
+    #mainNavigation > a,
+    #mainNavigation > button {
+        flex: 0 0 auto !important;
+        width: auto !important;
+        min-width: max-content !important;
+        min-height: 44px !important;
+        margin: 0 !important;
+        white-space: nowrap !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    #mainNavigation .theme-menu {
+        position: relative !important;
+        display: block !important;
+        flex: 0 0 auto !important;
+        width: auto !important;
+        margin: 0 !important;
+    }
+
+    #mainNavigation .theme-menu-button {
+        display: inline-flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        width: max-content !important;
+        min-width: max-content !important;
+        min-height: 44px !important;
+        padding: 10px 14px !important;
+        white-space: nowrap !important;
+        margin: 0 !important;
+    }
+
+    #mainNavigation .theme-dropdown {
+        position: absolute !important;
+        top: calc(100% + 8px) !important;
+        right: 0 !important;
+        left: auto !important;
+        width: 190px !important;
+        z-index: 1100 !important;
+    }
+}
+
+
+/* ---------- CELULAR E TABLET ---------- */
+
+@media (max-width: 768px) {
+
+    .header.grfit-header {
+        position: relative !important;
+        width: 100% !important;
+        min-height: 64px !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        z-index: 10000 !important;
+    }
+
+    /* Botão hambúrguer */
+
+    #grfitMenuToggle {
+        display: flex !important;
+        position: fixed !important;
+        top: 12px !important;
+        right: 14px !important;
+
+        width: 48px !important;
+        height: 48px !important;
+        min-width: 48px !important;
+        min-height: 48px !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        background: var(--surface) !important;
+        color: var(--text) !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 12px !important;
+
+        z-index: 10003 !important;
+        pointer-events: auto !important;
+        cursor: pointer !important;
+    }
+
+    /* Fundo escurecido */
+
+    .grfit-nav-backdrop {
+        display: block !important;
+        position: fixed !important;
+        inset: 0 !important;
+
+        background: rgba(0, 0, 0, .68) !important;
+
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+
+        z-index: 10001 !important;
+        transition: opacity .25s ease, visibility .25s ease !important;
+    }
+
+    .grfit-nav-backdrop.is-open {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+
+    /* Gaveta lateral */
+
+    .nav-reveal-area {
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important;
+        left: auto !important;
+
+        width: min(85vw, 340px) !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+
+        display: block !important;
+        padding: 82px 18px 28px !important;
+        margin: 0 !important;
+
+        background: var(--surface) !important;
+        border-left: 1px solid var(--border) !important;
+        box-shadow: -12px 0 40px rgba(0,0,0,.35) !important;
+
+        transform: translateX(105%) !important;
+        visibility: hidden !important;
+        opacity: 1 !important;
+        pointer-events: none !important;
+
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        overscroll-behavior: contain !important;
+
+        z-index: 10002 !important;
+
+        transition:
+            transform .3s ease,
+            visibility .3s ease !important;
+    }
+
+    .nav-reveal-area.is-open {
+        transform: translateX(0) !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+
+    /* Conteúdo clicável da gaveta */
+
+    #mainNavigation {
+        position: relative !important;
+        inset: auto !important;
+
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+
+        gap: 10px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+
+        transform: none !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        overflow: visible !important;
+    }
+
+    #mainNavigation > * {
+        position: relative !important;
+        flex: 0 0 auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        pointer-events: auto !important;
+    }
+
+    #mainNavigation > a,
+    #mainNavigation > button {
+        min-height: 48px !important;
+        padding: 12px 14px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        text-align: left !important;
+        white-space: normal !important;
+        pointer-events: auto !important;
+    }
+
+    /* Marca */
+
+    .grfit-nav-brand {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        margin-bottom: 12px !important;
+    }
+
+    .grfit-nav-brand img {
+        width: 85px !important;
+        height: 58px !important;
+        object-fit: contain !important;
+    }
+
+    /* Seletor de aparência */
+
+    #mainNavigation .theme-menu {
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        pointer-events: auto !important;
+    }
+
+    #mainNavigation .theme-menu-button {
+        display: flex !important;
+        width: 100% !important;
+        min-height: 48px !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 10px !important;
+        pointer-events: auto !important;
+    }
+
+    #mainNavigation .theme-dropdown {
+        position: static !important;
+        width: 100% !important;
+        margin-top: 8px !important;
+    }
+}

@@ -137,12 +137,8 @@ function showPage(pageId) {
         target.classList.contains("dashboard-page")
     );
 
-    // Fecha o menu público
-    const navigation = document.getElementById("mainNavigation");
-    const menuButton = document.querySelector(".header .menu-mobile");
-
-    navigation?.classList.remove("open");
-    menuButton?.setAttribute("aria-expanded", "false");
+    // Fecha corretamente a gaveta pública
+     closeMainNavigation();
 
     // Fecha também o seletor de temas
     document.getElementById("themeDropdown")
@@ -156,20 +152,30 @@ function showPage(pageId) {
 
 /* ABRIR E FECHAR MENU MOBILE */
 
+
 function toggleMenu() {
-    const navigation = document.getElementById("mainNavigation");
-    const button = document.querySelector(".header .menu-mobile");
+    const area = document.getElementById("grfitNavArea");
+    const backdrop = document.querySelector(".grfit-nav-backdrop");
+    const button = document.getElementById("grfitMenuToggle");
 
-    if (!navigation || !button) return;
+    if (!area || !backdrop || !button) {
+        console.error("Elementos do menu não encontrados.");
+        return;
+    }
 
-    const opened = navigation.classList.toggle("open");
+    const isOpen = area.classList.contains("is-open");
 
-    button.setAttribute("aria-expanded", String(opened));
-    button.setAttribute(
-        "aria-label",
-        opened ? "Fechar menu" : "Abrir menu"
-    );
+    if (isOpen) {
+        closeMainNavigation();
+    } else {
+        area.classList.add("is-open");
+        backdrop.classList.add("is-open");
+
+        button.setAttribute("aria-expanded", "true");
+        button.setAttribute("aria-label", "Fechar menu");
+    }
 }
+
 
 /* 5. TEMAS */
 
@@ -183,6 +189,17 @@ function setTheme(theme) {
   }
 
   document.body.dataset.theme = theme;
+  const themeIcon = document.getElementById("currentThemeIcon");
+
+   if (themeIcon) {
+  const icons = {
+    blue: "🌊",
+    dark: "☾",
+    light: "☀"
+  };
+
+  themeIcon.textContent = icons[theme];
+   }
 
   try {
     localStorage.setItem("grfit_theme", theme);
@@ -1906,20 +1923,26 @@ db.auth.onAuthStateChange((event, session) => {
 /* 23. MENU DE TEMAS */
 
 function toggleThemeMenu() {
-  const dropdown = document.getElementById("themeDropdown");
+  const menu = document.querySelector(".grfit-theme-menu");
+  const dropdown = menu?.querySelector(".theme-dropdown");
+  const button = menu?.querySelector(".theme-menu-button");
 
-  if (dropdown) {
-    dropdown.classList.toggle("open");
-  }
+  if (!dropdown || !button) return;
+
+  const aberto = dropdown.classList.toggle("open");
+
+  button.setAttribute("aria-expanded", String(aberto));
 }
-
 document.addEventListener("click", function(event) {
-  const menu = document.querySelector(".theme-menu");
-  const dropdown = document.getElementById("themeDropdown");
+  const menu = document.querySelector(".grfit-theme-menu");
 
-  if (menu && dropdown && !menu.contains(event.target)) {
-    dropdown.classList.remove("open");
-  }
+  if (!menu || menu.contains(event.target)) return;
+
+  const dropdown = menu.querySelector(".theme-dropdown");
+  const button = menu.querySelector(".theme-menu-button");
+
+  dropdown?.classList.remove("open");
+  button?.setAttribute("aria-expanded", "false");
 });
 
 /* =========================================
@@ -2081,31 +2104,13 @@ document.addEventListener("keydown", function(event) {
 
 /* GR FIT — CONTROLE DA NAVEGAÇÃO MOBILE */
 
-function toggleMainNavigation() {
-    const area = document.getElementById("grfitNavArea");
-    const backdrop = document.querySelector(".grfit-nav-backdrop");
-    const button = document.getElementById("grfitMenuToggle");
-
-    if (!area || !backdrop || !button) return;
-
-    const isOpen = area.classList.contains("is-open");
-
-    area.classList.toggle("is-open", !isOpen);
-    backdrop.classList.toggle("is-open", !isOpen);
-
-    button.setAttribute("aria-expanded", String(!isOpen));
-    button.setAttribute(
-        "aria-label",
-        isOpen ? "Abrir menu" : "Fechar menu"
-    );
-}
 
 function closeMainNavigation() {
     const area = document.getElementById("grfitNavArea");
     const backdrop = document.querySelector(".grfit-nav-backdrop");
     const button = document.getElementById("grfitMenuToggle");
 
-    area?.classList.remove("is-open");
+    area?.clssList.remove("is-open");
     backdrop?.classList.remove("is-open");
 
     if (button) {
@@ -2113,6 +2118,13 @@ function closeMainNavigation() {
         button.setAttribute("aria-label", "Abrir menu");
     }
 }
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closeMainNavigation();
+    }
+});
+
 
 document.addEventListener("keydown", function(event) {
     if (event.key === "Escape") {

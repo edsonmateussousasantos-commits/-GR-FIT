@@ -62,7 +62,7 @@
   <button
     class="menu-mobile grfit-menu-toggle"
     id="grfitMenuToggle"
-    onclick="toggleMainNavigation()"
+    onclick="toggleMenu()"
     aria-label="Abrir menu"
     aria-expanded="false"
     aria-controls="mainNavigation">
@@ -109,16 +109,19 @@
       <div class="theme-menu grfit-theme-menu">
 
         <button
-          class="theme-menu-button"
-          onclick="toggleThemeMenu()"
-          aria-label="Alterar aparência"
-          aria-expanded="false"
-          title="Alterar aparência">
+       class="theme-menu-button"
+       onclick="toggleThemeMenu()"
+       aria-label="Alterar aparência"
+       aria-expanded="false"
+       title="Alterar aparência">
 
-          <span class="theme-icon">☼</span>
-          <span>Alterar aparência</span>
-          <span class="theme-arrow">⌄</span>
-        </button>
+        <span class="theme-icon" id="currentThemeIcon">
+        ☾
+       </span>
+
+        <span>Alterar aparência</span>
+        <span class="theme-arrow">⌄</span>
+       </button>
 
         <div class="theme-dropdown" id="themeDropdown">
 
